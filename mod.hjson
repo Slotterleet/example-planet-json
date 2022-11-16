@@ -1,0 +1,7 @@
+name: ep-json
+displayName: JSON Example Planet
+author: Slotterleet
+subtitle: Hello fellow modders!
+description: This planet has (almost) every single field you can declare in JSON planets. Press the "Repo" button below to see the source code.\n\nThis is NOT meant to be played.
+repo: Slotterleet/example-planet-json
+minGameVersion: 140.3
