@@ -1,27 +1,65 @@
-localizedName: New Jason
-#the mesh of the planet. only NoiseMesh is supported for some reason
+# The planet's display name. If you want to support multiple languages, use bundles instead!
+localizedName: Jason 2.0
+# The mesh of the planet. Only NoiseMesh is still supported...
 mesh: {
+  # A class name.
   type: NoiseMesh
+  # A planet to apply this mesh to.
   planet: jason-v2
+  # A number used for mesh generation.
   seed: 69
+  # Mesh "quality". More divisions = more hexagons.
   divisions: 4
-  color1: 29302b
-  color2: 39403b
-  radius: 0.2
+  # First color to be used.
+  color1: a2a2c2
+  # Second color to be used.
+  color2: 22262b
+  # Mesh radius.
+  radius: 0.8
+  # A noise property.
   octaves: 3
+  # A noise property.
   persistence: 0.8
+  # Noise scale.
   scale: 1
+  # A noise property.
   mag: 1.5
 }
-#the mesh used for clouds. commented out since this planet has no clouds
-#cloudMesh: {}
-#you can't declare a type for this, but you can at least modify the existing one's fields. highly not recommended unless you REALLY know what you're doing, better make a sector preset
+# The mesh used for clouds. (Now supported btw)
+cloudMesh: {
+  # A class name.
+  type: HexSkyMesh
+  # A planet to apply this mesh to.
+  planet: jason-v2
+  # A number used for cloud generation.
+  seed: 96
+  # Cloud move speed.
+  speed: 0.4
+  # Cloud sphere radius.
+  radius: 0.05
+  # Clouds "quality". More divisions = more hexagons.
+  divisions: 4
+  # Cloud color.
+  color: 4662e87e
+  # A noise property.
+  octaves: 3
+  # A noise property.
+  persistence: 0.7
+  # Noise scale.
+  scl: 1
+  # Maximum number threshold for the noise.
+  thresh: 0.4
+}
+# A planet generator. For (H)JSON planets it's pre-determined (AsteroidGenerator) and cannot be changed.
+# But you can at least modify the existing one's fields. Highly not recommended unless you REALLY know what you're doing,
+# better make sector presets and don't waste your time with this.
 generator: {
-  #amount of asteroids
+  # Mininum amount of asteroids.
   min: 1
+  # Maximum amount of asteroids.
   max: 1
 
-  #noise properties
+  # Noise properties.
   octaves: 2
   persistence: 0.4
   scale: 30
@@ -32,63 +70,68 @@ generator: {
   fscl: 50
   fper: 0.6
 
-  #asteroid radius
-  radMin: 120
-  radMax: 120
+  # Asteroid radius range.
+  radMin: 600
+  radMax: 600
 
-  #this one is ABSOLUTELY pointless lmao
+  # This one is ABSOLUTELY pointless, lmao.
   stoneChance: 0
 
-  #terrain generation chances, in order: ice > carbon > beryl > ferric
-  iceChance: 0
-  carbonChance: 0
+  # Terrain generation chances, in order: ice > carbon > beryl > ferric.
+  iceChance: 0.5
+  carbonChance: 1
   berylChance: 0
   ferricChance: 0
 }
-#basically, spacing between a parent (this) and satellites
+# This determines the size of the sector grid.
+# Fun fact: The console will warn you about this "unknown" field, but it also functions properly at the same time.
+sectorSize: 1
+# Spacing between a parent (this) and satellites.
 orbitSpacing: 12
-#radius of this planet's sphere
+# Radius of this planet's sphere.
 radius: 1
-#minimum camera zoom
+# Minimum camera zoom.
 minZoom: 0.5
-#whether to draw the orbit
+# Whether to draw the orbit.
 drawOrbit: false
-#basically, atmosphere offset
+# Atmosphere offset.
 atmosphereRadIn: 0
 atmosphereRadOut: 0.3
-#whether this can be landed on
+# Whether this can be landed on.
 accessible: true
-#day-night cycle
+# Toggle day-night cycle.
 updateLighting: false
-#a seed of the generator. if -1, planet id is picked instead
-sectorSeed: -1
-#whether this blooms
+# A number used for sector generation. If it equals to -1, planet ID is picked instead.
+sectorSeed: 529
+# Whether this planet is blooming.
 bloom: false
-#this is self-explanatory
+# This is self-explanatory...
 visible: true
-#the color of the atmosphere
+# Also self-explanatory...
 atmosphereColor: aaaaaaaa
-#the color of the planet's icon displayed in top-left
+# The color of the planet's icon displayed in top-left dialog.
 iconColor: 29302b
-#whether this has atmosphere
+# Another self-explanatory field...
 hasAtmosphere: false
-#whether simulate waves when off-planet
+# Whether simulate waves when off-planet
 allowWaveSimulation: true
-#whether sectors are cleared when lost
+# Whether sectors are reset when a player loses them
 clearSectorOnLose: true
-#whether waves are re-created when a sector is lost
+# Whether waves are re-created when a sector is lost
 allowWaves: true
-#icon's name displayed in top-left
-icon: "commandRally"
-#default core block for launching
+# Icon's name displayed in top-left dialog.
+icon: planet
+# Default core block for launch loadouts
 defaultCore: core-nucleus
-#the parent of the planet
+# The parent of the planet
 parent: serpulo
-#the parent of the whole solar system the planet is in
+# The parent of the whole solar system the planet is in. Affects lighting.
 solarSystem: sun
-#possible planets that could be landed into from this planet. probably useless since interplanetary accelerator is still not working
+# Possible planets that could be landed into from this planet.
+# In the current version, only 1 entry is applicable if you decide to use modded accelerators.
+# Probably useless since the Interplanetary Accelerator is hidden and not working.
 launchCandidates: []
-#items not available in this planet
+# Items not available in this planet.
 hiddenItems: [
   graphite, plastanium, phase-fabric
 ]
