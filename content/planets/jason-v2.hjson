@@ -1,5 +1,6 @@
 # The planet's display name. If you want to support multiple languages, use bundles instead!
 localizedName: Jason 2.0
+
 # The mesh of the planet. Only NoiseMesh is still supported...
 mesh: {
   # A class name.
@@ -25,6 +26,7 @@ mesh: {
   # A noise property.
   mag: 1.5
 }
+
 # The mesh used for clouds. (Now supported btw)
 cloudMesh: {
   # A class name.
@@ -50,6 +52,7 @@ cloudMesh: {
   # Maximum number threshold for the noise.
   thresh: 0.4
 }
+
 # A planet generator. For (H)JSON planets it's pre-determined (AsteroidGenerator) and cannot be changed.
 # But you can at least modify the existing one's fields. Highly not recommended unless you REALLY know what you're doing,
 # better make sector presets and don't waste your time with this.
@@ -83,6 +86,9 @@ generator: {
   berylChance: 0
   ferricChance: 0
 }
+
+# Make sure this planet is always accessible anytime.
+alwaysUnlocked: true
 # This determines the size of the sector grid.
 # Fun fact: The console will warn you about this "unknown" field, but it also functions properly at the same time.
 sectorSize: 1
@@ -101,7 +107,7 @@ atmosphereRadOut: 0.3
 accessible: true
 # Toggle day-night cycle.
 updateLighting: false
-# A number used for sector generation. If it equals to -1, planet ID is picked instead.
+# A number used for sector generation. If == -1, planet ID is picked instead.
 sectorSeed: 529
 # Whether this planet is blooming.
 bloom: false
@@ -113,25 +119,31 @@ atmosphereColor: aaaaaaaa
 iconColor: 29302b
 # Another self-explanatory field...
 hasAtmosphere: false
-# Whether simulate waves when off-planet
+# Whether simulate waves when off-planet.
 allowWaveSimulation: true
-# Whether sectors are reset when a player loses them
+# Whether allow to land on procedurally generated sectors at all. False = only presets are available.
+allowLaunchToNumbered: true
+# Whether sectors are reset when a player loses them.
 clearSectorOnLose: true
-# Whether waves are re-created when a sector is lost
+# Whether waves are re-created when a sector is lost.
 allowWaves: true
 # Icon's name displayed in top-left dialog.
 icon: planet
-# Default core block for launch loadouts
+# Default core block for launch loadouts.
 defaultCore: core-nucleus
-# The parent of the planet
+# The parent of the planet.
 parent: serpulo
 # The parent of the whole solar system the planet is in. Affects lighting.
 solarSystem: sun
-# Possible planets that could be landed into from this planet.
+# Possible planets that could be landed on from this planet.
 # In the current version, only 1 entry is applicable if you decide to use modded accelerators.
 # Probably useless since the Interplanetary Accelerator is hidden and not working.
 launchCandidates: []
-# Items not available in this planet.
-hiddenItems: [
-  graphite, plastanium, phase-fabric
+# Items not available in this planet. Commented out because itemWhitelist is used instead as seen below.
+#hiddenItems: [
+#  graphite, plastanium, phase-fabric
+#]
+# Only items available in this planet. Recommended over hiddenItems.
+itemWhitelist: [
+  copper, lead, beryllium, graphite, titanium
 ]
