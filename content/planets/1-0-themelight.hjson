@@ -1,0 +1,61 @@
+# The planet's display name. If you want to support multiple languages, use bundles instead!
+localizedName: Themelight
+
+# The mesh of this star. SunMesh should now be supported in v146, thanks to my PR. (hehe, shameless plug)
+mesh: {
+    # Mesh type. Self-explanatory.
+    type: SunMesh
+    # Noise property.
+    divisions: 3
+    # Noise property.
+    octaves: 4
+    # Noise property.
+    persistence: 0.6
+    # Noise property.
+    scl: 1
+    # No clue what this does, honestly.
+    pow: 1
+    # Yet another noise property.
+    mag: 0.5
+    # Scaling of color values.
+    colorScale: 1
+    # Array of colors to use in your star. Any number of color values can be here!
+    colors: [
+        ffe06f
+        ffe790
+        ffedae
+        fff8c8
+        ffe53b
+    ]
+}
+
+# Whether this can be landed on.
+accessible: false
+# This is self-explanatory...
+visible: true
+# Also self-explanatory...
+hasAtmosphere: false
+# Whether this planet (or, in this case, star) is blooming. Just put it to true in
+# your star and don't bother.
+bloom: true
+# Spacing between a parent (this) and satellites.
+orbitSpacing: 8
+# Attach a solar system to the star itself so it shows up in the UI.
+solarSystem: 1-0-themelight
+# The parent of the planet. Initiating a new solar system should work in v146,
+# but I couldn't find a way to leave the parent null as it is currently required to declare for JSON planets.
+# So we set the parent to sun for a band-aid solution.
+# (A quick reminder: if you find a way to set this field to null, let me know!)
+parent: sun
+# Orbit radius of this planet. (Just to make it very far from the sun, I guess?)
+# Part 2 of the band-aid solution.
+orbitRadius: 12000
+# Whether to draw this planet's orbit.
+drawOrbit: false
+# Whether this planet is tidally locked. No clue what this means, go check Wikipedia
+# or something.
+tidalLock: true
+# The color of the planet's icon displayed in top-left dialog.
+iconColor: ffe06f
+# Icon's name displayed in top-left dialog. (commandRally is a circle)
+icon: commandRally

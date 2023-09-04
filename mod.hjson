@@ -1,7 +1,7 @@
 name: ep-json
-displayName: JSON Example Planet
+displayName: JSON Example Solar System!
 author: Slotterleet
-subtitle: Jason 2.0 Edition
+subtitle: Themelight included
 description: 
 '''
 This planet has (almost) every single field you can declare in JSON planets. Press the "Repo" button below to see the source code.
@@ -9,4 +9,4 @@ This planet has (almost) every single field you can declare in JSON planets. Pre
 This is NOT meant to be played.
 '''
 repo: Slotterleet/example-planet-json
-minGameVersion: 141
+minGameVersion: 146

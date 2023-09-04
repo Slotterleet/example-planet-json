@@ -1,12 +1,11 @@
 # The planet's display name. If you want to support multiple languages, use bundles instead!
 localizedName: Jason 2.0
 
-# The mesh of the planet. Only NoiseMesh is still supported...
+# The mesh of the planet. At least MultiMesh is supported, so you can put multiple
+# NoiseMesh'es to your planet!
 mesh: {
-  # A class name.
+  # Mesh type. Self-explanatory.
   type: NoiseMesh
-  # A planet to apply this mesh to.
-  planet: jason-v2
   # A number used for mesh generation.
   seed: 69
   # Mesh "quality". More divisions = more hexagons.
@@ -31,8 +30,6 @@ mesh: {
 cloudMesh: {
   # A class name.
   type: HexSkyMesh
-  # A planet to apply this mesh to.
-  planet: jason-v2
   # A number used for cloud generation.
   seed: 96
   # Cloud move speed.
@@ -99,7 +96,7 @@ radius: 1
 # Minimum camera zoom.
 minZoom: 0.5
 # Whether to draw the orbit.
-drawOrbit: false
+drawOrbit: true
 # Atmosphere offset.
 atmosphereRadIn: 0
 atmosphereRadOut: 0.3
@@ -132,9 +129,9 @@ icon: planet
 # Default core block for launch loadouts.
 defaultCore: core-nucleus
 # The parent of the planet.
-parent: serpulo
+parent: 1-0-themelight
 # The parent of the whole solar system the planet is in. Affects lighting.
-solarSystem: sun
+solarSystem: 1-0-themelight
 # Possible planets that could be landed on from this planet.
 # In the current version, only 1 entry is applicable if you decide to use modded accelerators.
 # Probably useless since the Interplanetary Accelerator is hidden and not working.
